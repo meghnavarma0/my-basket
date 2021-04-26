@@ -1,0 +1,16 @@
+.Header {
+  background-color: #222;
+  height: 186px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.Basket {
+  height: 80%;
+  color: aliceblue;
+}
+
+.Title {
+  font-size: 1.5em;
+}
