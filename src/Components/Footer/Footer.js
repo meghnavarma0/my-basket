@@ -3,7 +3,7 @@ import classes from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <div className={classes.Footer}>
+    <footer className={classes.Footer}>
       <div>
         <a className={classes.Links} href="http://localhost:3000/">
           All,
@@ -15,7 +15,7 @@ const Footer = () => {
           Purchased
         </a>
       </div>
-    </div>
+    </footer>
   );
 };
 
