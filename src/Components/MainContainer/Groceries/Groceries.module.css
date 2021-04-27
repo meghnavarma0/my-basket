@@ -1,0 +1,15 @@
+.Heading {
+  height: 60px;
+  width: 30vw;
+  padding: 10px 0;
+  margin: 10px 0px 0px 0px;
+  font-size: 1.17em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Img {
+  height: 50%;
+  margin-right: 5px;
+}
