@@ -1,6 +1,6 @@
 .Heading {
   height: 60px;
-  width: 30vw;
+  width: 90%;
   padding: 10px 0;
   margin: 10px 0px 0px 0px;
   font-size: 1.17em;
@@ -12,4 +12,24 @@
 .Img {
   height: 50%;
   margin-right: 5px;
+}
+
+.Container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  width: 30vw;
+}
+
+.Dustbin {
+  color: #ff6f6f;
+  height: 20px;
+}
+
+.Dustbin:hover {
+  color: #ff0000;
+  cursor: pointer;
+  height: 22px;
 }
