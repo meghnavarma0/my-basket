@@ -2,6 +2,8 @@
 
 ### The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 
+#### Example - 1
+
 Here's an example that shows how promises can be used in general.
 
 ```javascript
@@ -43,3 +45,24 @@ promise
 
 Output:
 ![error image](./src/assets/Images/Error.png)
+
+#### Example - 2
+
+```javascript
+const someWork = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve("hello JS"), 2000);
+  });
+};
+
+const getData = async () => {
+  const data = await someWork();
+  console.group(data);
+};
+
+getData();
+```
+
+In the above example, the following output pops up after a timeout of 2 minutes(2000ms)
+
+`hello JS`
