@@ -1,6 +1,12 @@
 # Promises
 
-### The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+### A promise in JavaScript is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously. When the task completes, you either fulfill your promise or fail to do so. Promise is a constructor function, so you need to use the new keyword to create one. It takes a function, as its argument, with two parameters - resolve and reject. These are methods used to determine the outcome of the promise. The syntax looks like this:
+
+````javascript
+
+const myPromise = new Promise((resolve, reject) => {
+
+});```
 
 #### Example - 1
 
@@ -23,7 +29,7 @@ promise
 
 // Output:
 // the secret code is:  1u3980938mnbjhb
-```
+````
 
 Similarly, if value of success is false, then:
 
