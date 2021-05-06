@@ -2,11 +2,51 @@
 
 ### A promise in JavaScript is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously. When the task completes, you either fulfill your promise or fail to do so. Promise is a constructor function, so you need to use the new keyword to create one. It takes a function, as its argument, with two parameters - resolve and reject. These are methods used to determine the outcome of the promise. The syntax looks like this:
 
-````javascript
+```javascript
+const myPromise = new Promise((resolve, reject) => {});
+```
 
-const myPromise = new Promise((resolve, reject) => {
+### Polyfill for promise:
 
-});```
+```javascript
+function MyPromise(configFuction) {
+  let nextSuccessCallback, nextResolve;
+  configFuction(function (message) {
+    setTimeout(() => {
+      if (nextSuccessCallback) {
+        result = nextSuccessCallback(message);
+
+        if (result && result.then) {
+          result.then(nextResolve);
+        } else {
+          nextResolve && nextResolve(result);
+        }
+      }
+    });
+  });
+  return {
+    then: (successCallback) => {
+      nextSuccessCallback = successCallback;
+      return new MyPromise(function (resolve) {
+        nextResolve = resolve;
+      });
+    },
+  };
+}
+
+new MyPromise((resolve, reject) => {
+  resolve("first");
+})
+  .then((result) => {
+    console.log(result);
+    return "second";
+  })
+  .then((result) => console.log(result));
+
+// Output:
+// first
+// second
+```
 
 #### Example - 1
 
@@ -29,7 +69,7 @@ promise
 
 // Output:
 // the secret code is:  1u3980938mnbjhb
-````
+```
 
 Similarly, if value of success is false, then:
 
